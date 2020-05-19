@@ -39,8 +39,12 @@ const App = () => {
       console.log(state);
       // Your code here to change lightStatus when the 
       //   state of the state machine changes
+        return state.value === "green" ? setLightStatus(GREEN_LIGHT)
+          : state.value === "yellow" ? setLightStatus(YELLOW_LIGHT)
+            : setLightStatus(RED_LIGHT);
+      }
 
-    });
+      );
   }, [])
 
   const changeLight = () => {
